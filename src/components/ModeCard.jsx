@@ -1,4 +1,12 @@
+
 export default function ModeCard({ mode, featured = false }) {
+  // Ajusta o enquadramento apenas do Modo Estudo.
+  const isStudyMode = mode.label?.toLowerCase() === 'study';
+
+  const imagePosition = isStudyMode
+    ? '80% center'
+    : mode.previewPosition || 'center center';
+
   return (
     <article
       className={`mode-card ${featured ? 'featured' : ''}`}
@@ -13,6 +21,10 @@ export default function ModeCard({ mode, featured = false }) {
         <img
           src={mode.image}
           alt={`Demonstração visual do ${mode.name}`}
+          style={{
+            objectFit: 'cover',
+            objectPosition: imagePosition,
+          }}
         />
 
         <figcaption>

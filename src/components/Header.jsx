@@ -1,4 +1,7 @@
+
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const navigationLinks = [
   { label: 'Solução', href: '#solucao' },
@@ -11,6 +14,7 @@ const navigationLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user } = useAuth();
 
   function closeMenu() {
     setMenuOpen(false);
@@ -18,7 +22,8 @@ export default function Header() {
 
   return (
     <header className="topbar">
-      <div className="topbar__inner">
+      <div className="topbar__inner topbar__inner--balanced">
+
         <a
           className="topbar__brand"
           href="#inicio"
@@ -31,8 +36,10 @@ export default function Header() {
             aria-hidden="true"
           />
 
-          <strong>TRÓIA</strong>
-          <span>/ JOVI</span>
+          <div className="topbar__brand-text">
+            <strong>TRÓIA</strong>
+            <span>JOVI SCENE</span>
+          </div>
         </a>
 
         <button
@@ -76,14 +83,24 @@ export default function Header() {
             ))}
           </div>
 
-          <a
-            className="topbar__cta"
-            href="#demo"
-            onClick={closeMenu}
-          >
-            Testar agora
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div className="topbar__actions">
+            <Link
+              to={user ? '/dashboard' : '/login'}
+              className="topbar__account"
+              onClick={closeMenu}
+            >
+              {user ? 'Meu Dashboard' : 'Minha conta'}
+            </Link>
+
+            <a
+              className="topbar__cta"
+              href="#demo"
+              onClick={closeMenu}
+            >
+              Testar agora
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </nav>
       </div>
     </header>

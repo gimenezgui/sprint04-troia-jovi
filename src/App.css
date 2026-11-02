@@ -1755,3 +1755,384 @@ section {
     left: 50px;
   }
 }
+
+
+/* =========================================
+   JOVI SCENE - NAVBAR REFINADO
+========================================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 10, 8, 0.96);
+  border-bottom: 1px solid #292e2a;
+  backdrop-filter: blur(18px);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 88px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 64px);
+}
+
+/* LOGOTIPO */
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.topbar__brand img {
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  padding: 6px;
+  object-fit: contain;
+  background: #101411;
+  border: 1px solid #303631;
+  border-radius: 14px;
+}
+
+.topbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topbar__brand-text strong {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+}
+
+.topbar__brand-text span {
+  color: #929a93;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+/* NAVEGAÇÃO */
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(20px, 2.5vw, 40px);
+  min-width: 0;
+}
+
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.7vw, 28px);
+}
+
+.topbar__links a {
+  position: relative;
+  padding: 10px 0;
+  color: #c2c9c2;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.topbar__links a:hover {
+  color: #cbff45;
+}
+
+.topbar__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 3px;
+  width: 0;
+  height: 2px;
+  background: #cbff45;
+  transition: width 0.25s ease;
+}
+
+.topbar__links a:hover::after {
+  width: 100%;
+}
+
+/* BOTÕES */
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.topbar__account,
+.topbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid #414841;
+  border-radius: 999px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.topbar__account {
+  color: #f5f7f4;
+  background: transparent;
+}
+
+.topbar__account:hover {
+  color: #cbff45;
+  border-color: #cbff45;
+}
+
+.topbar__cta {
+  color: #111411;
+  background: #cbff45;
+  border-color: #cbff45;
+}
+
+.topbar__cta:hover {
+  color: #111411;
+  background: #dcff80;
+  border-color: #dcff80;
+  transform: translateY(-2px);
+}
+
+.topbar__cta span {
+  font-size: 16px;
+}
+
+/* ACESSIBILIDADE */
+
+.topbar a:focus-visible,
+.topbar button:focus-visible {
+  outline: 2px solid #cbff45;
+  outline-offset: 4px;
+}
+
+/* MENU MOBILE */
+
+.topbar__toggle {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .topbar__toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .topbar__nav {
+    display: grid;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    gap: 22px;
+    max-height: 0;
+    padding: 0 24px;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    background: #090c0a;
+    border-bottom: 1px solid #303531;
+    transition:
+      max-height 0.35s ease,
+      padding 0.35s ease,
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .topbar__nav.open {
+    max-height: calc(100dvh - 88px);
+    padding: 24px;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .topbar__links {
+    display: grid;
+    gap: 0;
+  }
+
+  .topbar__links a {
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #252a26;
+  }
+
+  .topbar__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .topbar__account,
+  .topbar__cta {
+    flex: 1;
+    min-width: 140px;
+    border-radius: 999px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar__inner {
+    min-height: 76px;
+    padding: 0 20px;
+  }
+
+  .topbar__brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topbar__brand-text strong {
+    font-size: 15px;
+  }
+
+  .topbar__brand-text span {
+    font-size: 9px;
+  }
+
+  .topbar__nav.open {
+    max-height: calc(100dvh - 76px);
+  }
+
+  .topbar__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar__account,
+  .topbar__cta {
+    width: 100%;
+    flex: none;
+  }
+}
+
+
+/* Ajuste final de proporções do navbar */
+
+@media (min-width: 1201px) {
+  .topbar__inner--balanced {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    min-height: 82px;
+    padding-inline: clamp(28px, 4vw, 64px);
+  }
+
+  .topbar__inner--balanced .topbar__nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .topbar__inner--balanced .topbar__links {
+    justify-content: center;
+    gap: clamp(14px, 1.8vw, 28px);
+  }
+
+  .topbar__inner--balanced .topbar__links a {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .topbar__inner--balanced .topbar__actions {
+    gap: 10px;
+  }
+
+  .topbar__inner--balanced .topbar__account,
+  .topbar__inner--balanced .topbar__cta {
+    min-height: 42px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1350px) {
+  .topbar__inner--balanced {
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 16px;
+    padding-inline: 24px;
+  }
+
+  .topbar__inner--balanced .topbar__nav {
+    gap: 14px;
+  }
+
+  .topbar__inner--balanced .topbar__links {
+    gap: 13px;
+  }
+
+  .topbar__inner--balanced .topbar__links a {
+    font-size: 14px;
+  }
+}
+
+
+/* Refinamento final dos links do navbar */
+
+@media (min-width: 1201px) {
+  .topbar__inner--balanced {
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 16px;
+    padding-inline: 24px;
+  }
+
+  .topbar__inner--balanced .topbar__nav {
+    gap: 16px;
+  }
+
+  .topbar__inner--balanced .topbar__links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 2vw, 32px);
+  }
+
+  .topbar__inner--balanced .topbar__links a {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .topbar__inner--balanced .topbar__actions {
+    gap: 10px;
+  }
+
+  .topbar__inner--balanced .topbar__account,
+  .topbar__inner--balanced .topbar__cta {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { cameraModes } from '../data/modes';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -6,12 +7,12 @@ import SectionTitle from './SectionTitle';
 
 export default function CameraDemo() {
   const [selectedModeId, setSelectedModeId] = useState(
-    cameraModes[0].id,
+    cameraModes[0].id
   );
 
   const [captures, setCaptures] = useLocalStorage(
     'troia-capture-history',
-    [],
+    []
   );
 
   const selectedMode =
@@ -30,6 +31,13 @@ export default function CameraDemo() {
   function handleClearHistory() {
     setCaptures([]);
   }
+
+  // Ajuste individual do enquadramento de cada modo.
+  // O Modo Estudo usa uma posição personalizada.
+  const imagePosition =
+    selectedMode.id === cameraModes[0].id
+      ? '100% center'
+      : selectedMode.previewPosition || 'center center';
 
   return (
     <section
@@ -99,7 +107,10 @@ export default function CameraDemo() {
             src={selectedMode.image}
             alt={`Prévia do ${selectedMode.name}`}
             style={{
-                objectPosition: selectedMode.previewPosition,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: imagePosition,
             }}
           />
 

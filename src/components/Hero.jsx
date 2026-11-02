@@ -42,6 +42,10 @@ export default function Hero() {
           className="hero-visual-image"
           src="/jovi-study.png"
           alt="Estudante utilizando a câmera no modo Estudo"
+          style={{
+            objectFit: 'cover',
+            objectPosition: '80% center',
+          }}
         />
 
         <div
