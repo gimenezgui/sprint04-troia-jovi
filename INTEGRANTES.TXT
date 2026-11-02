@@ -1,0 +1,33 @@
+GRUPO TRÓIA
+FIAP CHALLENGE - JOVI 2026
+PROJETO: JOVI SCENE
+
+INTEGRANTES
+
+Lucas Rodrigues dos Santos
+RM: 571778
+Responsabilidade: Storytelling
+
+Vitor Assis
+RM: 572192
+Responsabilidade: Python
+
+Guilherme Gimenez
+RM: 563389
+Responsabilidade: Front-end e Web Development
+
+Raul Moreira
+RM: 571042
+Responsabilidade: Estruturação
+
+Rafael de Souza
+RM: 568777
+Responsabilidade: Ideias
+
+REPOSITÓRIO
+
+https://github.com/gimenezgui/sprint03-troia-webdev
+
+PUBLICAÇÃO NA VERCEL
+
+https://sprint03-troia-webdev.vercel.app/
