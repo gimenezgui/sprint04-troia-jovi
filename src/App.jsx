@@ -1,30 +1,25 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Demo from './pages/Demo';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Footer from './components/Footer';
-import Solution from './components/Solution';
-import Gallery from './components/Gallery';
-import CameraDemo from './components/CameraDemo';
-import Audience from './components/Audience';
-import Team from './components/Team';
-import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <>
-      <Header />
-
-      <main>
-        <Hero />
-        <Solution />
-        <Gallery />
-        <CameraDemo />
-        <Audience />
-        <Team />
-        <Contact />
-      </main>
-
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/demo" element={<Demo />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="*"
+        element={
+          <main className="flex min-h-screen items-center justify-center bg-black text-white">
+            <h1 className="text-3xl">404 — Página não encontrada</h1>
+          </main>
+        }
+      />
+    </Routes>
   );
 }
