@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Demo from './pages/Demo';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 export default function App() {
@@ -11,7 +12,11 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/demo" element={<Demo />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
+
       <Route
         path="*"
         element={
