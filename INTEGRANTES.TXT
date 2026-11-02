@@ -1,6 +1,16 @@
 GRUPO TRÓIA
-FIAP CHALLENGE - JOVI 2026
+
+FIAP CHALLENGE — JOVI 2026
+
 PROJETO: JOVI SCENE
+
+ENTREGA: SPRINT 04
+
+DISCIPLINAS:
+- Web Development
+- Front-End Design
+
+---
 
 INTEGRANTES
 
@@ -14,7 +24,7 @@ Responsabilidade: Python
 
 Guilherme Gimenez
 RM: 563389
-Responsabilidade: Front-end e Web Development
+Responsabilidade: Front-End e Web Development
 
 Raul Moreira
 RM: 571042
@@ -24,10 +34,38 @@ Rafael de Souza
 RM: 568777
 Responsabilidade: Ideias
 
-REPOSITÓRIO
+---
 
-https://github.com/gimenezgui/sprint03-troia-webdev
+REPOSITÓRIO — SPRINT 04
 
-PUBLICAÇÃO NA VERCEL
+https://github.com/gimenezgui/sprint04-troia-jovi
 
-https://sprint03-troia-webdev.vercel.app/
+PUBLICAÇÃO NA VERCEL — SPRINT 04
+
+https://sprint04-troia-jovi.vercel.app/
+
+---
+
+TECNOLOGIAS UTILIZADAS
+
+React
+JavaScript
+Vite
+React Router DOM
+Context API
+Tailwind CSS
+HTML5
+CSS3
+Fetch API
+JSONPlaceholder
+localStorage
+Git e GitHub
+Vercel
+
+---
+
+DESCRIÇÃO
+
+Projeto acadêmico desenvolvido para o Challenge JOVI 2026 da FIAP.
+
+A Sprint 04 representa a evolução da Sprint 03, incorporando navegação por rotas, autenticação demonstrativa, dashboard, integração com API externa e gerenciamento local de capturas simuladas.

@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from 'react';
 
-const AuthContext = createContext(null);
+import { useState } from 'react';
+import { AuthContext } from './AuthContext.js';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
 
   function login(name) {
     const newUser = { name };
+
     sessionStorage.setItem('jovi-user', JSON.stringify(newUser));
     setUser(newUser);
   }
@@ -27,14 +28,4 @@ export function AuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
-}
-
-export function useAuth() {
-  const context = useContext(AuthContext);
-
-  if (!context) {
-    throw new Error('useAuth deve ser usado dentro de AuthProvider');
-  }
-
-  return context;
 }
