@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+import CapturesGallery from '../components/CapturesGallery';
+
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -34,12 +36,7 @@ export default function Dashboard() {
           Bem-vindo à sua área de gerenciamento de capturas.
         </p>
 
-        <div className="mt-10 rounded-xl border border-white/10 bg-white/5 p-8">
-          <h2 className="text-2xl font-semibold">Minhas capturas</h2>
-          <p className="mt-3 text-gray-400">
-            Em breve, você poderá consultar suas capturas e informações da API.
-          </p>
-        </div>
+        <CapturesGallery />
 
         <Link to="/" className="mt-8 inline-block text-lime-300">
           ← Voltar ao início
