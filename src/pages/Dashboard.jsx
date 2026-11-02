@@ -3,6 +3,8 @@ import { useAuth } from '../context/AuthContext';
 
 import CapturesGallery from '../components/CapturesGallery';
 
+import CaptureHistory from '../components/CaptureHistory';
+
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -36,11 +38,39 @@ export default function Dashboard() {
           Bem-vindo à sua área de gerenciamento de capturas.
         </p>
 
+        <CaptureHistory />
+
+            <div className="my-12 border-t border-white/10" />
+
         <CapturesGallery />
 
-        <Link to="/" className="mt-8 inline-block text-lime-300">
-          ← Voltar ao início
+        <div className="mt-12 flex flex-wrap items-center gap-4 border-t border-white/10 pt-8 pb-12">
+
+        <Link
+            to="/demo"
+            className="
+                inline-flex min-h-12 items-center justify-center gap-2
+                rounded-lg bg-lime-300 px-6 py-3
+                font-semibold !text-black
+                transition-all duration-200
+                hover:-translate-y-0.5
+                hover:bg-lime-200
+                hover:!text-black
+            "
+        >
+            <span>＋</span>
+            Nova captura
         </Link>
+
+        <Link
+            to="/"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 font-medium text-white transition-all duration-200 hover:border-lime-300 hover:text-lime-300"
+        >
+            <span>←</span>
+            Voltar ao início
+        </Link>
+
+        </div>
       </div>
     </main>
   );
